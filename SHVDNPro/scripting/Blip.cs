@@ -326,8 +326,8 @@ namespace GTA
 		{
 			get
 			{
-			    return GTA.Entity.FromHandle(Function.Call<int>(Hash.GET_BLIP_INFO_ID_ENTITY_INDEX, Handle));
-            }
+				return GTA.Entity.FromHandle(Function.Call<int>(Hash.GET_BLIP_INFO_ID_ENTITY_INDEX, Handle));
+			}
 		}
 
 		public bool ShowRoute

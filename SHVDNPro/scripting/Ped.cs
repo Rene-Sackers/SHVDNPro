@@ -468,10 +468,10 @@ namespace GTA
 					return VehicleSeat.None;
 				}
 
-                int offset = (Game.Version >= (GameVersion) 25 ? 0x158A : 0x1542);
-                offset = (Game.Version >= (GameVersion) 27 ? 0x159A : offset);
+				int offset = (Game.Version >= (GameVersion) 25 ? 0x158A : 0x1542);
+				offset = (Game.Version >= (GameVersion) 27 ? 0x159A : offset);
 
-                int seatIndex = MemoryAccess.ReadInt(MemoryAddress + offset);
+				int seatIndex = MemoryAccess.ReadInt(MemoryAddress + offset);
 
 				if (seatIndex == -1 || !IsInVehicle())
 				{
@@ -1000,10 +1000,10 @@ namespace GTA
 					return false;
 				}
 
-                int offset = (Game.Version >= (GameVersion)25 ? 0x13E5 : 0x13BD);
-                offset = (Game.Version >= (GameVersion)27 ? 0x13F5 : offset);
+				int offset = (Game.Version >= (GameVersion)25 ? 0x13E5 : 0x13BD);
+				offset = (Game.Version >= (GameVersion)27 ? 0x13F5 : offset);
 
-                return (MemoryAccess.ReadByte(MemoryAddress + offset) & (1 << 6)) == 0;
+				return (MemoryAccess.ReadByte(MemoryAddress + offset) & (1 << 6)) == 0;
 			}
 			set
 			{
@@ -1113,10 +1113,10 @@ namespace GTA
 					return false;
 				}
 
-                int offset = (Game.Version >= (GameVersion)25 ? 0x13E4 : 0x13BC);
-                offset = (Game.Version >= (GameVersion)27 ? 0x13F4 : offset);
+				int offset = (Game.Version >= (GameVersion)25 ? 0x13E4 : 0x13BC);
+				offset = (Game.Version >= (GameVersion)27 ? 0x13F4 : offset);
 
-                return (MemoryAccess.ReadByte(MemoryAddress + offset) & (1 << 2)) == 0;
+				return (MemoryAccess.ReadByte(MemoryAddress + offset) & (1 << 2)) == 0;
 			}
 			set
 			{

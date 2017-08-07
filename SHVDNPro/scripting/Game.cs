@@ -4,47 +4,47 @@ using GTA.Native;
 
 namespace GTA
 {
-    public enum GameVersion
-    {
-        Unknown = -1,
-        v1_0_335_2_Steam,
-        v1_0_335_2_NoSteam,
-        v1_0_350_1_Steam,
-        v1_0_350_2_NoSteam,
-        v1_0_372_2_Steam,
-        v1_0_372_2_NoSteam,
-        v1_0_393_2_Steam,
-        v1_0_393_2_NoSteam,
-        v1_0_393_4_Steam,
-        v1_0_393_4_NoSteam,
-        v1_0_463_1_Steam,
-        v1_0_463_1_NoSteam,
-        v1_0_505_2_Steam,
-        v1_0_505_2_NoSteam,
-        v1_0_573_1_Steam,
-        v1_0_573_1_NoSteam,
-        v1_0_617_1_Steam,
-        v1_0_617_1_NoSteam,
-        v1_0_678_1_Steam,
-        v1_0_678_1_NoSteam,
-        v1_0_757_2_Steam,
-        v1_0_757_2_NoSteam,
-        v1_0_757_3_Steam,
-        v1_0_757_4_NoSteam,
-        v1_0_791_2_Steam,
-        v1_0_791_2_NoSteam,
-        v1_0_877_1_Steam,
-        v1_0_877_1_NoSteam,
-        v1_0_944_2_Steam,
-        v1_0_944_2_NoSteam,
-        v1_0_1011_1_Steam,
-        v1_0_1011_1_NoSteam,
-        v1_0_1032_1_Steam,
-        v1_0_1032_1_NoSteam,
-        v1_0_1103_2_Steam,
-        v1_0_1103_2_NoSteam
-    }
-    public enum Language
+	public enum GameVersion
+	{
+		Unknown = -1,
+		v1_0_335_2_Steam,
+		v1_0_335_2_NoSteam,
+		v1_0_350_1_Steam,
+		v1_0_350_2_NoSteam,
+		v1_0_372_2_Steam,
+		v1_0_372_2_NoSteam,
+		v1_0_393_2_Steam,
+		v1_0_393_2_NoSteam,
+		v1_0_393_4_Steam,
+		v1_0_393_4_NoSteam,
+		v1_0_463_1_Steam,
+		v1_0_463_1_NoSteam,
+		v1_0_505_2_Steam,
+		v1_0_505_2_NoSteam,
+		v1_0_573_1_Steam,
+		v1_0_573_1_NoSteam,
+		v1_0_617_1_Steam,
+		v1_0_617_1_NoSteam,
+		v1_0_678_1_Steam,
+		v1_0_678_1_NoSteam,
+		v1_0_757_2_Steam,
+		v1_0_757_2_NoSteam,
+		v1_0_757_3_Steam,
+		v1_0_757_4_NoSteam,
+		v1_0_791_2_Steam,
+		v1_0_791_2_NoSteam,
+		v1_0_877_1_Steam,
+		v1_0_877_1_NoSteam,
+		v1_0_944_2_Steam,
+		v1_0_944_2_NoSteam,
+		v1_0_1011_1_Steam,
+		v1_0_1011_1_NoSteam,
+		v1_0_1032_1_Steam,
+		v1_0_1032_1_NoSteam,
+		v1_0_1103_2_Steam,
+		v1_0_1103_2_NoSteam
+	}
+	public enum Language
 	{
 		American,
 		French,
@@ -713,31 +713,31 @@ namespace GTA
 			return unchecked((int) MemoryAccess.GetHashKey(input));
 		}
 
-	    /// <summary>
-	    /// Returns a localized <see cref="string"/> from the games language files with a specified GXT key.
-	    /// </summary>
-	    /// <param name="entry">The GXT key.</param>
-	    /// <returns>The localized <see cref="string"/> if the key exists; otherwise, <see cref="string.Empty"/></returns>
-	    public static string GetLocalizedString(string entry)
-	    {
-	        return Function.Call<bool>(Hash.DOES_TEXT_LABEL_EXIST, entry) ? Function.Call<string>(Hash._GET_LABEL_TEXT, entry) : string.Empty;
-	    }
-	    /// <summary>
-	    /// Returns a localized <see cref="string"/> from the games language files with a specified GXT key hash.
-	    /// </summary>
-	    /// <param name="entryLabelHash">The GXT key hash.</param>
-	    /// <returns>The localized <see cref="string"/> if the key hash exists; otherwise, <see cref="string.Empty"/></returns>
-	    public static string GetLocalizedString(int entryLabelHash)
-	    {
-	        return MemoryAccess.GetGXTEntryByHash(entryLabelHash);
-	    }
+		/// <summary>
+		/// Returns a localized <see cref="string"/> from the games language files with a specified GXT key.
+		/// </summary>
+		/// <param name="entry">The GXT key.</param>
+		/// <returns>The localized <see cref="string"/> if the key exists; otherwise, <see cref="string.Empty"/></returns>
+		public static string GetLocalizedString(string entry)
+		{
+			return Function.Call<bool>(Hash.DOES_TEXT_LABEL_EXIST, entry) ? Function.Call<string>(Hash._GET_LABEL_TEXT, entry) : string.Empty;
+		}
+		/// <summary>
+		/// Returns a localized <see cref="string"/> from the games language files with a specified GXT key hash.
+		/// </summary>
+		/// <param name="entryLabelHash">The GXT key hash.</param>
+		/// <returns>The localized <see cref="string"/> if the key hash exists; otherwise, <see cref="string.Empty"/></returns>
+		public static string GetLocalizedString(int entryLabelHash)
+		{
+			return MemoryAccess.GetGXTEntryByHash(entryLabelHash);
+		}
 
-        /// <summary>
-        /// Plays a sound from the games sound files
-        /// </summary>
-        /// <param name="soundFile">The file the sound is stored in</param>
-        /// <param name="soundSet">The name of the sound inside the file</param>
-        public static void PlaySound(string soundFile, string soundSet)
+		/// <summary>
+		/// Plays a sound from the games sound files
+		/// </summary>
+		/// <param name="soundFile">The file the sound is stored in</param>
+		/// <param name="soundSet">The name of the sound inside the file</param>
+		public static void PlaySound(string soundFile, string soundSet)
 		{
 			Audio.ReleaseSound(Audio.PlaySoundFrontend(soundFile, soundSet));
 		}

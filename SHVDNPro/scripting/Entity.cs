@@ -302,8 +302,8 @@ namespace GTA
 		{
 			get
 			{
-			    return Function.Call<bool>(Hash.IS_ENTITY_UPRIGHT, Handle, 30.0f);
-            }
+				return Function.Call<bool>(Hash.IS_ENTITY_UPRIGHT, Handle, 30.0f);
+			}
 		}
 		public bool IsUpsideDown
 		{
