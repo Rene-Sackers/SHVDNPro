@@ -224,7 +224,7 @@ namespace GTA.UI
 		/// </returns>
 		public static float GetStringWidth(string text, Font font = Font.ChaletLondon, float scale = 1.0f)
 		{
-			Function.Call(Hash._SET_TEXT_ENTRY_FOR_WIDTH, "CELL_EMAIL_BCON");
+			Function.Call(Hash._BEGIN_TEXT_COMMAND_WIDTH, "CELL_EMAIL_BCON");
 
 			const int maxStringLength = 99;
 
@@ -236,7 +236,7 @@ namespace GTA.UI
 			Function.Call(Hash.SET_TEXT_FONT, font);
 			Function.Call(Hash.SET_TEXT_SCALE, scale, scale);
 
-			return Screen.Width * Function.Call<float>(Hash._GET_TEXT_SCREEN_WIDTH, 1);
+			return Screen.Width * Function.Call<float>(Hash._END_TEXT_COMMAND_GET_WIDTH, 1);
 		}
 		/// <summary>
 		/// Measures how many pixels in the horizontal axis the string will use when drawn
@@ -249,7 +249,7 @@ namespace GTA.UI
 		/// </returns>
 		public static float GetScaledStringWidth(string text, Font font = Font.ChaletLondon, float scale = 1.0f)
 		{
-			Function.Call(Hash._SET_TEXT_ENTRY_FOR_WIDTH, "CELL_EMAIL_BCON");
+			Function.Call(Hash._BEGIN_TEXT_COMMAND_WIDTH, "CELL_EMAIL_BCON");
 
 			const int maxStringLength = 99;
 
@@ -261,7 +261,7 @@ namespace GTA.UI
 			Function.Call(Hash.SET_TEXT_FONT, font);
 			Function.Call(Hash.SET_TEXT_SCALE, scale, scale);
 
-			return Screen.ScaledWidth * Function.Call<float>(Hash._GET_TEXT_SCREEN_WIDTH, 1);
+			return Screen.ScaledWidth * Function.Call<float>(Hash._END_TEXT_COMMAND_GET_WIDTH, 1);
 		}
 
 
@@ -344,7 +344,7 @@ namespace GTA.UI
 				Function.Call(Hash.SET_TEXT_WRAP, 0.0f, x);
 			}
 
-			Function.Call(Hash._SET_TEXT_ENTRY, "CELL_EMAIL_BCON");
+			Function.Call(Hash.BEGIN_TEXT_COMMAND_DISPLAY_TEXT, "CELL_EMAIL_BCON");
 
 			const int maxStringSize = 99;
 			byte[] buffer = Encoding.UTF8.GetBytes(Caption);
@@ -361,7 +361,7 @@ namespace GTA.UI
 			}
 			Marshal.FreeCoTaskMem(bufferSub);
 
-			Function.Call(Hash._DRAW_TEXT, x, y);
+			Function.Call(Hash.END_TEXT_COMMAND_DISPLAY_TEXT, x, y);
 		}
 	}
 }

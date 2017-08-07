@@ -292,4 +292,7 @@
       <Filter>scripting\World</Filter>
     </CsCompile>
   </ItemGroup>
+  <ItemGroup>
+    <None Include=".editorconfig" />
+  </ItemGroup>
 </Project>

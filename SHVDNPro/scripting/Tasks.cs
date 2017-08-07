@@ -235,7 +235,6 @@ namespace GTA
 			}
 
 			ClearAll();
-			_ped.BlockPermanentEvents = true;
 
 			Function.Call(Hash.TASK_PERFORM_SEQUENCE, _ped.Handle, sequence.Handle);
 		}
